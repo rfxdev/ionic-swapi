@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      People <span *ngIf="(people | async)?.count"> - {{(people | async)?.count}}</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngFor="let person of (people | async)?.results">
+    {{person.name}}
+  </ion-list>
+</ion-content>

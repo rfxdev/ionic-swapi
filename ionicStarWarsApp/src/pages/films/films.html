@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Films <span *ngIf="(films | async)?.count"> - {{(films | async)?.count}}</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <button ion-item *ngFor="let film of (films | async)?.results" (click)="openDetails(film)">
+    {{ film.title }}
+  </button>
+
+  <ion-content padding>
+    <button ion-button full (click)="goToPlanets()">Switch to Planets</button>
+  </ion-content>
+</ion-content>
